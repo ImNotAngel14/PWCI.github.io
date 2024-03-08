@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/producto.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+<!--SECCION DE LA BARRA DE MENU-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="pagina_inicio.html"><i class="fa-solid fa-shop"></i></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown menuOpcion">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorías
+                </a>
+                <ul class="dropdown-menu ">
+                  <li><a class="dropdown-item" href="#">Electronicos</a></li>
+                  <li><a class="dropdown-item" href="#">Muebles</a></li>
+                  <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                </ul>
+              </li>
+              <li class="nav-item menuOpcion">
+                <a class="nav-link active" aria-current="page" href="#" >Inicio</a>
+              </li>
+            </ul>
+            
+            <form class="d-flex" role="search" style="width: 40%;" id="bars-search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="input-search" style="z-index: 9;">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+            <ul class="box-search" id="box-search" style="left: 79%; transform: translateX(-79%);">
+
+                <li><a href="#">
+                <i class="fa-solid fa-magnifying-glass"></i></a></li>
+
+            </ul>
+
+            <ul class="box-search" id="box-search" style="left: 62%; transform: translateX(-62%);">
+
+                <li><a href="#">
+                <i class="fa-solid fa-magnifying-glass"></i></a></li>
+
+
+            </ul>
+
+            <div class="cover-ctn-search" id="cover-ctn-search"></div>
+
+            <a href="#" style="margin: 0px 20px;"><i class="carrito fa-sharp fa-solid fa-cart-shopping"></i><span id="num_cart" class="badge bg-secondary"></span></a>
+
+
+
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item login">
+                    <a class="nav-link" href="index_Login_Register.php" id="btnLogin">Iniciar Sesion</a>
+                </li>
+                <li class="nav-item register">
+                    <a class="nav-link" href="index_Register_Login.php" id="btnRegister" style="margin-bottom: 0; padding-bottom: 0; border-bottom: 0;">Registrarse</a>
+                </li>
+            </ul>
+
+            <!--SECCION USUARIO PERFIL-->
+                <img src="images/img_perfil.jpg" alt="" class="usuarioImage" onclick="toggleMenu()">
+                <div class="sub-menu-wrap" id="subMenu" >
+                    <div class="sub-menu">
+                        <div class="usuario-info">
+                        
+                            <img src="images/img_perfil.jpg" alt="" class="usuarioImage">
+                            <h3>Nombre de usuario</h3>
+                        </div>
+                        <hr>
+
+                        <a href="#" class="sub-menu-link">
+                            <i class="fa-solid fa-user"></i>
+                            <p>Editar perfil</p>
+                            <span></span>
+                        </a>
+
+                        <a href="" class="sub-menu-link">
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Configuración y privacidad</p>
+                            <span></span>
+                        </a>
+
+                        <a href="" class="sub-menu-link">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <p>Ayuda y Soporte</p>
+                            <span></span>
+                        </a>
+                        <a href="php/index_logOut.php" class="sub-menu-link">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <p>Cerrar Sesion</p>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            <!--FIN SECCION USUARIO PERFIL-->
+          </div>
+        </div>
+    </nav>
+<!---->
+<div class="container-fluid">
+    <div class="row" style="margin-left: 0.05rem;">
+        <div class="col-12" style=" border-radius: 5px; background-color: rgb(255, 255, 255); margin-top: 2rem; margin-bottom: 2rem;">
+            <nav aria-label="breadcrumb" style="padding:1rem 1rem 0rem 1rem;">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                  <li class="breadcrumb-item"><a href="#">Categoría</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Producto</li>
+                </ol>
+            </nav>
+            <hr>
+            <div class="div_principal" style="padding: 1rem;">
+                <div class="row">
+                    <div class="col-8" style="align-items: center; text-align: center;">
+                        <div id="carouselmultimedia" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselmultimedia" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselmultimedia" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#carouselmultimedia" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                              <button type="button" data-bs-target="#carouselmultimedia" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="images/producto1.jpg" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/producto1_1.jpg" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/producto1_2.jpg" class="d-block w-100" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <video width="640" height="360" controls>
+                                    <source src="images/producto1.mp4" type="video/mp4">
+                                    Tu navegador no soporta la reproducción de videos.
+                                </video>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselmultimedia" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselmultimedia" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Siguiente</span>
+                            </button>
+                          </div>
+
+                    </div>
+                    <div class="col-4">
+                        <div class="nombre_producto">
+                            <div class="d-flex" style="flex: row; color: darkgrey;">
+                                <span>Categoría:</span>&nbsp;<p>Categoría</p>
+                            </div>
+                            <h3>Nombre del Producto</h3>
+                            <div class="d-flex" style="flex: row; color: rgb(107, 107, 107);">
+
+                            <hr>
+                                <span>Vendedor:</span>&nbsp;<p>Vendedor</p>
+                            </div>
+                            <p style="font-size: 1.25rem;">Descripción del Producto</p>
+    
+                            <br>
+                            <div class="d-flex" style="flex: row; font-weight: bold;">
+                                <span>Likes:</span>&nbsp;<p>500 <i class="fa-solid fa-thumbs-up" class="likes" data-toggle="tooltip" data-placement="top" title="Likes" style="color: rgb(54, 165, 255);"></i></p>
+                            </div>
+                            <br>
+                            <div class="tipo_producto">
+                                <p>Precio fijo</p>
+                            </div>
+
+                            <br>
+
+                            <div class="d-flex" style="flex: row;">
+                                <h4>Precio:</h4>&nbsp;<h4>$120.00 MXN</h4>
+                            </div>
+
+                            <br>
+
+                            <span>Cantidad: </span>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn" style="background-color: rgb(230, 230, 230);" id="bajar">-</button>
+                                <span style="padding: 0.25rem 1rem 0.25rem 1rem; border: solid 1px gray;" id="cantidad_art">1</span>
+                                <button type="button" class="btn" style="background-color: rgb(230, 230, 230);" id="aumentar">+</button>
+                            </div>                            
+                            
+                            <br><br>
+
+                            <div class="d-flex justify-content-between" style="font-size: 1.5rem;">
+                                <a id="agregar_btn" class="btn btn-outline-success">Agregar al carrito<i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h2>Comentarios:</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-12" style="margin-left: 0.75rem; padding:0.75rem; border: solid 1px gainsboro; border-radius: 10px; background-color: rgb(240, 240, 240);">
+                        <h6 >Nombre Usuario</h6>
+                        <hr>
+                        <p>Texto del comentario</p>
+                        <hr>
+                        <div class="d-flex" style="flex: row; font-weight:lighter">
+                            <span>Valoración:</span>&nbsp;<p>Like</p>&nbsp;<i class="fa-solid fa-thumbs-up" class="likes" data-toggle="tooltip" title="Likes" style="color: rgb(54, 165, 255);"></i>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-12" style="margin-left: 0.75rem; padding:0.75rem; border: solid 1px gainsboro; border-radius: 10px; background-color: rgb(240, 240, 240);">
+                        <h6 >Nombre Usuario</h6>
+                        <hr>
+                        <p>Texto del comentario</p>
+                        <hr>
+                        <div class="d-flex" style="flex: row; font-weight:lighter">
+                            <span>Valoración:</span>&nbsp;<p>Disike</p>&nbsp;<i class="fa-solid fa-thumbs-down" class="dislikes" data-toggle="tooltip" title="Disikes" style="color: rgb(184, 23, 23);"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--SCRIPTS-->  
+<script src="https://kit.fontawesome.com/c3ad86cf20.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="js/navbar.js"></script>
+<script>
+var miBoton = document.getElementById("agregar_btn");
+
+miBoton.addEventListener("click", function() {
+    alert("¡Producto agregado al carrito!");
+});
+</script>
+
+</body>
+</html>

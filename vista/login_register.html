@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index_Login_Register</title>
+
+    <link rel="stylesheet" type="text/css" href="css/login_register.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c3ad86cf20.js" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+
+</head>
+<body>
+ <!--SECCION DE LA BARRA DE MENU-->
+ <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="pagina_inicio.html"><i class="fa-solid fa-shop"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown menuOpcion">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorías
+            </a>
+            <ul class="dropdown-menu ">
+              <li><a class="dropdown-item" href="#">Electronicos</a></li>
+              <li><a class="dropdown-item" href="#">Muebles</a></li>
+              <li><a class="dropdown-item" href="#">Accesorios</a></li>
+            </ul>
+          </li>
+          <li class="nav-item menuOpcion">
+            <a class="nav-link active" aria-current="page" href="#" >Inicio</a>
+          </li>
+        </ul>
+        
+        <form class="d-flex" role="search" style="width: 40%;" id="bars-search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="input-search" style="z-index: 9;">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <ul class="box-search" id="box-search" style="left: 79%; transform: translateX(-79%);">
+
+            <li><a href="#">
+            <i class="fa-solid fa-magnifying-glass"></i></a></li>
+
+        </ul>
+
+        <ul class="box-search" id="box-search" style="left: 62%; transform: translateX(-62%);">
+
+            <li><a href="#">
+            <i class="fa-solid fa-magnifying-glass"></i></a></li>
+
+
+        </ul>
+
+        <div class="cover-ctn-search" id="cover-ctn-search"></div>
+
+        <a href="#" style="margin: 0px 20px;"><i class="carrito fa-sharp fa-solid fa-cart-shopping"></i><span id="num_cart" class="badge bg-secondary"></span></a>
+
+
+
+        <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item login">
+                <a class="nav-link" href="index_Login_Register.php" id="btnLogin">Iniciar Sesion</a>
+            </li>
+            <li class="nav-item register">
+                <a class="nav-link" href="index_Register_Login.php" id="btnRegister" style="margin-bottom: 0; padding-bottom: 0; border-bottom: 0;">Registrarse</a>
+            </li>
+        </ul>
+
+        <!--SECCION USUARIO PERFIL-->
+            <img src="images/img_perfil.jpg" alt="" class="usuarioImage" onclick="toggleMenu()">
+            <div class="sub-menu-wrap" id="subMenu" >
+                <div class="sub-menu">
+                    <div class="usuario-info">
+                    
+                        <img src="images/img_perfil.jpg" alt="" class="usuarioImage">
+                        <h3>Nombre de usuario</h3>
+                    </div>
+                    <hr>
+
+                    <a href="#" class="sub-menu-link">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Editar perfil</p>
+                        <span></span>
+                    </a>
+
+                    <a href="" class="sub-menu-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <p>Configuración y privacidad</p>
+                        <span></span>
+                    </a>
+
+                    <a href="" class="sub-menu-link">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <p>Ayuda y Soporte</p>
+                        <span></span>
+                    </a>
+                    <a href="php/index_logOut.php" class="sub-menu-link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <p>Cerrar Sesion</p>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        <!--FIN SECCION USUARIO PERFIL-->
+      </div>
+    </div>
+</nav>
+
+
+  
+<!--Este es el div que contendra todo el formulario y demas-->
+      <div class="contenedor_padre">
+        <div class="caja_Trasera">
+          <div class="caja_Trasera_Login">
+            <h3>¿Ya tienes una cuenta?</h3>
+            <p>Inicia sesion para entrar en la pagina</p>
+            <button id="btn_InicioSesion">Inicia Sesion</button>
+          </div>
+
+          <div class="caja_Trasera_Register">
+            <h3>¿Aun no tienes una cuenta?</h3>
+            <p>Registrate para entrar en la pagina</p>
+            <button id="btn_Registrarse">Registrarse</button>
+          </div>
+        </div>
+<!--Formulario de login y registro-->
+<div class="contenedor_Login-Register">
+
+  <!--Login form-->
+  <form action="" class="formulario_Login" method="POST">
+    <h2>Inicia sesión en tu cuenta</h2>
+    <div class="contenedor_Icon">
+    <i class="fa-solid fa-envelope"></i>
+    <input type="text" placeholder="Correo electronico" id="txt_login_email" name = "txt_login_email">
+    </div>
+
+    <div class="contenedor_Icon">
+      <i class="fa-solid fa-key"></i>
+    <input type="password" placeholder="Contraseña" id="txt_login_password" name = "txt_login_password">
+    </div>
+    <button>Entrar</button>
+  </form>
+
+  <!--Register form-->
+  <form action="" class="formulario_Register" id="form_register" method="POST">
+    <h2>Regístrate.</h2>
+    <div class="contenedor_Icon">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" placeholder="Nombre Usuario" id="txt_usuario" name = "txt_usuario">
+    </div>
+
+    <div class="contenedor_Icon">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" placeholder="Nombre Completo" id="txt_nombre" name = "txt_nombre">
+    </div>
+
+    <div class="contenedor_Icon">
+      <i class="fa-solid fa-venus-mars"></i>
+      <select id="select_genero" name ="select_genero">
+        <option disabled="">Selecciona una opcion de Genero</option>
+        <option value="0">Hombre</option>
+        <option value="1">Mujer</option>
+      </select>
+    </div>
+
+    <div class="contenedor_Icon">
+      <i class="fa-solid fa-calendar-days"></i>
+      <input type="date" placeholder="Ingrese su fecha de nacimiento" id="date_fecha" name = "date_fecha">
+    </div>
+
+    <div class="contenedor_Icon">
+      <i class="fa-solid fa-envelope"></i>
+      <input type="text" placeholder=" Correo electronico" id="txt_email" name = "txt_email"> 
+    </div>
+
+    <div class="contenedor_Icon">
+      <i class="fa-solid fa-key"></i>
+      <input type="password" placeholder="Contraseña" id="txt_password" name = "txt_password">
+    </div>
+
+    <div class="contenedor_Icon">
+      <i class="fa-solid fa-chalkboard-user"></i>
+      <select id="select_rol" name ="select_rol">
+        <option disabled="">Selecciona una opcion de rol</option>
+        <option value="0">Cliente</option>
+        <option value="1">Vendedor</option>
+      </select>
+    </div>
+
+    <div class="contenedor_Icon">
+      <i class="fa-solid fa-image"></i>
+      <input type="file" id ="file_img" accept="image/*" name = "file_img">
+      <label for="file_img"><i class="fa-solid fa-folder" style="margin-right: 4px;"></i>Seleccionar imagen de perfil</label>
+    </div>
+    
+    <button type="submit" id="btn_submit_register" name="btn_submit_register">Registrarse</button>
+  </form>
+</div>
+</div>
+
+<!--SECCION VENTANA MODAL-->
+<!--esta parte contendra lo de la ventana modal-->
+
+<div class="contenedor-modal" id="contenedor-modal">
+  <div class="contenido-modal">
+    <h2>Datos no validos</h2>
+    <!--<i class="fa-solid fa-circle-xmark" onclick="cerrar_ventana()"></i>-->
+    <div class="warnings">
+      <p id="txt_warnings"></p>
+      <div class="btn-cerrar">
+        <label for="btn-modal" onclick="cerrar_ventana()">Cerrar</label>
+      </div>
+    </div>
+  </div>
+</div>
+<!--FIN SECCION VENTANA MODAL-->
+
+<!--SCRIPT DEL FORMULARIO DE SESIO/REGISTRO-->
+<script src="js/login_register.js">
+</script>
+
+
+</body>
+</html>

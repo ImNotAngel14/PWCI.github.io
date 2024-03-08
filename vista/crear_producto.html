@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crear Producto</title>
+        <link rel="stylesheet" type="text/css" href="css/crear_producto.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body style="background-color: rgb(196, 196, 196);">
+        <!--SECCION DE LA BARRA DE MENU-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="pagina_inicio.html"><i class="fa-solid fa-shop"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown menuOpcion">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorías
+                    </a>
+                    <ul class="dropdown-menu ">
+                    <li><a class="dropdown-item" href="#">Electronicos</a></li>
+                    <li><a class="dropdown-item" href="#">Muebles</a></li>
+                    <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item menuOpcion">
+                    <a class="nav-link active" aria-current="page" href="#" >Inicio</a>
+                </li>
+                </ul>
+                
+                <form class="d-flex" role="search" style="width: 40%;" id="bars-search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="input-search" style="z-index: 9;">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+                <ul class="box-search" id="box-search" style="left: 79%; transform: translateX(-79%);">
+
+                    <li><a href="#">
+                    <i class="fa-solid fa-magnifying-glass"></i></a></li>
+
+                </ul>
+
+                <ul class="box-search" id="box-search" style="left: 62%; transform: translateX(-62%);">
+
+                    <li><a href="#">
+                    <i class="fa-solid fa-magnifying-glass"></i></a></li>
+
+
+                </ul>
+
+                <div class="cover-ctn-search" id="cover-ctn-search"></div>
+
+                <a href="#" style="margin: 0px 20px;"><i class="carrito fa-sharp fa-solid fa-cart-shopping"></i><span id="num_cart" class="badge bg-secondary"></span></a>
+
+
+
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item login">
+                        <a class="nav-link" href="index_Login_Register.php" id="btnLogin">Iniciar Sesion</a>
+                    </li>
+                    <li class="nav-item register">
+                        <a class="nav-link" href="index_Register_Login.php" id="btnRegister" style="margin-bottom: 0; padding-bottom: 0; border-bottom: 0;">Registrarse</a>
+                    </li>
+                </ul>
+
+                <!--SECCION USUARIO PERFIL-->
+                    <img src="images/img_perfil.jpg" alt="" class="usuarioImage" onclick="toggleMenu()">
+                    <div class="sub-menu-wrap" id="subMenu" >
+                        <div class="sub-menu">
+                            <div class="usuario-info">
+                            
+                                <img src="images/img_perfil.jpg" alt="" class="usuarioImage">
+                                <h3>Nombre de usuario</h3>
+                            </div>
+                            <hr>
+
+                            <a href="#" class="sub-menu-link">
+                                <i class="fa-solid fa-user"></i>
+                                <p>Editar perfil</p>
+                                <span></span>
+                            </a>
+
+                            <a href="" class="sub-menu-link">
+                                <i class="fa-solid fa-gear"></i>
+                                <p>Configuración y privacidad</p>
+                                <span></span>
+                            </a>
+
+                            <a href="" class="sub-menu-link">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>Ayuda y Soporte</p>
+                                <span></span>
+                            </a>
+                            <a href="php/index_logOut.php" class="sub-menu-link">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <p>Cerrar Sesion</p>
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                <!--FIN SECCION USUARIO PERFIL-->
+            </div>
+            </div>
+        </nav>
+    <!---->
+        <h1 style="padding-top: 1.5rem;">Crear Producto</h1>
+        <form id="productForm" method="POST" enctype="multipart/form-data">
+            <div class="container">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+        
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+        
+                <label for="imagenes">Imágenes (mínimo 3):</label>
+                <input type="file" id="imagenes" name="imagenes[]" accept=".jpg, .jpeg, .png" multiple required>
+        
+                <label for="video">Video (mínimo 1):</label>
+                <input type="file" id="video" name="video" accept=".mp4" required>
+        
+                <label for="categoria">Categoría (al menos una):</label>
+                <select id="categoriaSelect" name="categoria[]" multiple required>
+                    <option value="categoria1">Categoría 1</option>
+                    <option value="categoria2">Categoría 2</option>
+                    <option value="categoria3">Categoría 3</option>
+                    <option value="nuevaCategoria">Crear Nueva Categoría</option>
+                </select>
+        
+                <div id="nuevaCategoriaDiv">
+                    <h2>Crear Nueva Categoría</h2>
+                    <label for="nuevaCategoria">Nombre de la nueva categoría:</label>
+                    <input type="text" id="nuevaCategoria" name="nuevaCategoria">
+                    <label for="descCategoria">Descripción de la nueva categoría:</label>
+                    <input type="text" id="descCategoria" name="descCategoria">
+                    <br>
+                </div>
+                <br>
+                <label for="tipo">Tipo (cotizar o vender):</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="cotizar">Cotizar</option>
+                    <option value="vender">Vender</option>
+                </select>
+        
+                <div id="precioDiv">
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" step="0.01" required>
+                </div>
+        
+                <label for="cantidad">Cantidad disponible:</label>
+                <input type="number" id="cantidad" name="cantidad" required>
+        
+                <button type="submit">Crear Producto</button>
+            </div>
+        </form>
+        <!--SCRIPTS-->  
+        <script src="https://kit.fontawesome.com/c3ad86cf20.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="js/navbar.js"></script>
+        <script>
+            function mostrarAlerta() {
+            alert("Producto creado");
+            }
+
+            const tipoSelect = document.getElementById("tipo");
+            const precioDiv = document.getElementById("precioDiv");
+            const imagenesInput = document.getElementById("imagenes");
+            const categoriaSelect = document.getElementById("categoriaSelect");
+            const nuevaCategoriaDiv = document.getElementById("nuevaCategoriaDiv");
+            const nuevaCategoriaInput = document.getElementById("nuevaCategoria");
+        
+            // mostrar u ocultar el campo de precio
+            tipoSelect.addEventListener("change", function () {
+                if (tipoSelect.value === "vender") {
+                    precioDiv.style.display = "block";
+                } else {
+                    precioDiv.style.display = "none";
+                }
+            });
+        
+            // mostrar/ocultar crear nueva categoria
+            categoriaSelect.addEventListener("change", function () {
+                if (categoriaSelect.value === "nuevaCategoria") {
+                    nuevaCategoriaDiv.style.display = "block";
+                } else {
+                    nuevaCategoriaDiv.style.display = "none";
+                }
+            });
+        
+            // valida la cantidad disponible
+            const cantidadInput = document.getElementById("cantidad");
+            const productForm = document.getElementById("productForm");
+        
+            productForm.addEventListener("submit", function (event) {
+                if (tipoSelect.value === "vender" && parseInt(cantidadInput.value) <= 0) {
+                    event.preventDefault(); // Evitar el envío del formulario
+                    alert("La cantidad disponible debe ser mayor que cero.");
+                }
+                
+                // Validar que se hayan seleccionado al menos 3 imágenes
+                const selectedImages = imagenesInput.files;
+                if (selectedImages.length < 3) {
+                    event.preventDefault(); // Evitar el envío del formulario
+                    alert("Debe seleccionar al menos 3 imágenes.");
+                }
+            });
+
+            productForm.addEventListener("submit", mostrarAlerta);
+        </script>
+    </body>
+
+</html>

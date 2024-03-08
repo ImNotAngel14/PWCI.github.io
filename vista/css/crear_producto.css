@@ -1,0 +1,215 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/*ESTILOS BOTONES DEL MENU*/
+
+.menuOpcion a:hover{
+    background-color: #46a2fd;
+}
+.dropdown-menu a:hover{
+    background-color: #2a68a6b1;
+}
+.login{
+    border: solid;
+    margin: 0px 10px;
+}
+.login a:hover{
+    color: #46a2fd;
+}
+.register{
+    border: solid;
+    background-color: #3fb37d;
+    margin: 0px 10px;
+
+}
+.register :hover{
+    background-color: #2a7c5d;
+}
+.usuarioImage{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+/*buscador de contenido*/
+#box-search{
+    position: fixed;
+    top:60px;
+
+    width: 520px;
+    background: white;
+    z-index: 8;
+    list-style-type: none;
+    display: none;
+}
+#box-search li a{
+    display: block;
+    width: 489px;;
+    color: #777777;
+    padding: 12px 0px;
+    text-decoration: none;
+}
+
+#box-search li a:hover{
+    color:black;
+    font-weight: 600;
+}
+
+#box-search li a i{
+    margin-right:10px;
+    color: #777777;
+}
+
+#cover-ctn-search{
+    width: 100%;
+    height: 200%;
+    position: fixed;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 7;
+    display: none;
+}
+/*-------------------------*/
+
+.sub-menu-wrap{
+    z-index: 10;
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+}
+.sub-menu{
+    background:#d5d5d5 ;
+    padding: 20px;
+    margin: 10px;
+}
+.usuario-info{
+    display: flex;
+    align-items: center;
+}
+.usuario-info h3{
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+.usuario-info img{
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #53524f;
+    margin: 15px 0 10px;
+}
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #53524f;
+    margin: 12px 0px;
+}
+.sub-menu-link p{
+    width: 100%;
+}
+.sub-menu-link i{
+    width: 40px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    padding: 12px;
+    margin-right: 15px;
+
+}
+.sub-menu-link span{
+    font-size: 22px;
+    transition: trasform 0.5s;
+}
+.sub-menu-link:hover span{
+    transform: translateX(5px);
+}
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+
+.carrito{
+    color: rgba(255, 255, 255, 0.938);
+}
+
+/*-------------------------------*/
+/* asasa */
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#productForm {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 1.75rem 2.25rem 1.75rem 1.75rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;            
+    padding: 0.25rem;
+}
+
+input[type="file"] {
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+#categoriaSelect {
+    width: 100%;
+}
+
+#nuevaCategoriaDiv {
+    display: none;
+    background-color: #ccc;
+    padding: 1rem 1.5rem 1rem 1rem;
+    border-radius: 5px;
+}
+
+#nuevaCategoriaDiv input{
+    margin-right: 1.5rem;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 0.75rem 1.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}

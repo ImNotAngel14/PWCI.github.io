@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/lista.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+<!--SECCION DE LA BARRA DE MENU-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="pagina_inicio.html"><i class="fa-solid fa-shop"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown menuOpcion">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorías
+            </a>
+            <ul class="dropdown-menu ">
+                <li><a class="dropdown-item" href="#">Electronicos</a></li>
+                <li><a class="dropdown-item" href="#">Muebles</a></li>
+                <li><a class="dropdown-item" href="#">Accesorios</a></li>
+            </ul>
+            </li>
+            <li class="nav-item menuOpcion">
+            <a class="nav-link active" aria-current="page" href="#" >Inicio</a>
+            </li>
+        </ul>
+        
+        <form class="d-flex" role="search" style="width: 40%;" id="bars-search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="input-search" style="z-index: 9;">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <ul class="box-search" id="box-search" style="left: 79%; transform: translateX(-79%);">
+
+            <li><a href="#">
+            <i class="fa-solid fa-magnifying-glass"></i></a></li>
+
+        </ul>
+
+        <ul class="box-search" id="box-search" style="left: 62%; transform: translateX(-62%);">
+
+            <li><a href="#">
+            <i class="fa-solid fa-magnifying-glass"></i></a></li>
+
+
+        </ul>
+
+        <div class="cover-ctn-search" id="cover-ctn-search"></div>
+
+        <a href="#" style="margin: 0px 20px;"><i class="carrito fa-sharp fa-solid fa-cart-shopping"></i><span id="num_cart" class="badge bg-secondary"></span></a>
+
+
+
+        <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item login">
+                <a class="nav-link" href="index_Login_Register.php" id="btnLogin">Iniciar Sesion</a>
+            </li>
+            <li class="nav-item register">
+                <a class="nav-link" href="index_Register_Login.php" id="btnRegister" style="margin-bottom: 0; padding-bottom: 0; border-bottom: 0;">Registrarse</a>
+            </li>
+        </ul>
+
+        <!--SECCION USUARIO PERFIL-->
+            <img src="images/img_perfil.jpg" alt="" class="usuarioImage" onclick="toggleMenu()">
+            <div class="sub-menu-wrap" id="subMenu" >
+                <div class="sub-menu">
+                    <div class="usuario-info">
+                    
+                        <img src="images/img_perfil.jpg" alt="" class="usuarioImage">
+                        <h3>Nombre de usuario</h3>
+                    </div>
+                    <hr>
+
+                    <a href="#" class="sub-menu-link">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Editar perfil</p>
+                        <span></span>
+                    </a>
+
+                    <a href="" class="sub-menu-link">
+                        <i class="fa-solid fa-gear"></i>
+                        <p>Configuración y privacidad</p>
+                        <span></span>
+                    </a>
+
+                    <a href="" class="sub-menu-link">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <p>Ayuda y Soporte</p>
+                        <span></span>
+                    </a>
+                    <a href="php/index_logOut.php" class="sub-menu-link">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <p>Cerrar Sesion</p>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        <!--FIN SECCION USUARIO PERFIL-->
+        </div>
+    </div>
+</nav>
+
+<!--SECCION DE QUE ESPERAR-->
+<div class="div_principal">
+<!---->
+  <hr class="separador">
+  <div class="lista_productos">
+      <div class="header_productos">
+          <h2 style="margin-left: 1.5rem;">Carrito de compras</h2>
+      </div>
+
+      <hr>
+
+      <div class="container-fluid">
+            <div class="row">
+                <div class="lista_articulos col-lg-8 col-md-7 col-sm-12 order-md-1 order-2">
+                    <!--Product Card-->
+                    <div class="producto">
+                        <div class="card" >
+                            <div class="row" style="margin: 0;">
+                            <div class="card_img col-lg-3 col-md-4 col-sm-6 col-12">
+                            <img src="images/producto1.jpg" alt="..." style="margin-top: 1.5rem; border-radius: 5px;">
+                            </div>
+                            <div class="card-body col-lg-9 col-md-8 col-sm-6 col-12" style="padding-left: 1rem;">
+                            <h5 class="card-title">Balón de Fútbol</h5>
+                            <p class="card-subtitulo1">Vendedor.</p>
+                            <p class="card-text" style="text-align: justify;">Descripción.</p>
+                            <div class="cantidad_articulos">
+                                <div class="cart-item"  style="margin-bottom: 1rem;">
+                                    
+                                    <span>Cantidad: </span>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn" style="background-color: rgb(230, 230, 230);" id="bajar">-</button>
+                                        <span style="padding: 0.25rem 1rem 0.25rem 1rem; border: solid 1px gray;" id="cantidad_art">1</span>
+                                        <button type="button" class="btn" style="background-color: rgb(230, 230, 230);" id="aumentar">+</button>
+                                    </div>
+
+                                    <br>
+
+                                </div>                             
+                            </div>
+                            <button id="elim_product" type="button" class="btn btn-outline-danger">Eliminar <i class="fa-regular fa-trash-can"></i></button>
+                            <script>
+                                // Obtén referencias a los elementos HTML
+                            const elim_btn = document.getElementById('elim_product');
+                            elim_btn.addEventListener("click", function() {
+                            alert("Producto eliminado del carrito");
+                            });
+                            </script>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Product Card-->
+                    <hr class="separador">
+                    <!--Product Card-->
+                    <div class="producto">
+                        <div class="card" >
+                            <div class="row" style="margin: 0;">
+                            <div class="card_img col-lg-3 col-md-4 col-sm-6 col-12">
+                            <img src="images/producto1.jpg" alt="..." style="margin-top: 1.5rem; border-radius: 5px;">
+                            </div>
+                            <div class="card-body col-lg-9 col-md-8 col-sm-6 col-12" style="padding-left: 1rem;">
+                            <h5 class="card-title">Balón de Fútbol</h5>
+                            <p class="card-subtitulo1">Vendedor.</p>
+                            <p class="card-text" style="text-align: justify;">Descripción.</p>
+                            <div class="cantidad_articulos">
+                                <div class="cart-item"  style="margin-bottom: 1rem;">
+                                    
+                                    <span>Cantidad: </span>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn" style="background-color: rgb(230, 230, 230);" id="bajar">-</button>
+                                        <span style="padding: 0.25rem 1rem 0.25rem 1rem; border: solid 1px gray;" id="cantidad_art">1</span>
+                                        <button type="button" class="btn" style="background-color: rgb(230, 230, 230);" id="aumentar">+</button>
+                                    </div>
+
+                                    <br>
+
+                                </div>                             
+                            </div>
+                            <button type="button" class="btn btn-outline-danger">Eliminar <i class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Product Card-->
+                    <hr class="separador">
+                    <!--Product Card-->
+                    <div class="producto">
+                        <div class="card" >
+                            <div class="row" style="margin: 0;">
+                            <div class="card_img col-lg-3 col-md-4 col-sm-6 col-12">
+                            <img src="images/producto1.jpg" alt="..." style="margin-top: 1.5rem; border-radius: 5px;">
+                            </div>
+                            <div class="card-body col-lg-9 col-md-8 col-sm-6 col-12" style="padding-left: 1rem;">
+                            <h5 class="card-title">Balón de Fútbol</h5>
+                            <p class="card-subtitulo1">Vendedor.</p>
+                            <p class="card-text" style="text-align: justify;">Descripción.</p>
+                            <div class="cantidad_articulos">
+                                <div class="cart-item"  style="margin-bottom: 1rem;">
+                                    
+                                    <span>Cantidad: </span>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn" style="background-color: rgb(230, 230, 230);" id="bajar">-</button>
+                                        <span style="padding: 0.25rem 1rem 0.25rem 1rem; border: solid 1px gray;" id="cantidad_art">1</span>
+                                        <button type="button" class="btn" style="background-color: rgb(230, 230, 230);" id="aumentar">+</button>
+                                    </div>
+
+                                    <br>
+
+                                </div>                             
+                            </div>
+                            <button type="button" class="btn btn-outline-danger">Eliminar <i class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Product Card-->
+
+                </div>
+                <div class="resumen_carrito col-lg-4 col-md-5 col-sm-12 order-md-2 order-1" style="background-color: rgb(255, 255, 255); border: solid 1px rgb(207, 207, 207); height: fit-content; margin-bottom:1.5rem;" >
+                    <div class="resumen_pedido" style="margin: 1.5rem 1.5rem;">
+                        <h3>Resumen del Pedido</h3>
+                        <hr>
+                        <div class="d-flex" style="flex-direction:row;">
+                            <strong>Subtotal:</strong> 
+                            &nbsp;&nbsp;
+                            <h6>$MXN 0.00</h6>
+                        </div>
+                        <br>
+                        <div class="d-flex" style="flex-direction:row;">
+                            <strong>Envío:</strong> 
+                            &nbsp;&nbsp;
+                            <h6>$MXN 0.00</h6>
+                        </div>
+                        <br>
+                        <div class="d-flex" style="flex-direction:row;">
+                            <h5>Total:</h5> 
+                            &nbsp;&nbsp;
+                            <h4>$MXN 0.00</h4>
+                        </div>
+                        <hr>
+                        <h5>Método de Pago:</h5>
+                        <div>
+                            <input type="radio" id="tarjeta" name="metodo_pago" value="tarjeta">
+                            <label for="tarjeta"><h6>Tarjeta de Crédito / Débito</h6></label>
+                        </div>
+                        <div>
+                            <input type="radio" id="paypal" name="metodo_pago" value="paypal">
+                            <label for="paypal"><h6>Paypal</h6></label>
+                        </div>
+                        <br>
+                        <div class="btn_pagar" style="width: 100%; text-align: center; margin: 0 auto;">
+                            <a href="carrito_paga.html" type="button" class="btn btn-info" style="color:white; font-weight: bolder; width: 80%; ">Pagar ahora</a>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                    <h4 style="margin-left:1.5rem;">Aceptamos:</h4>
+                    <div class="bank-img" style="margin-top: 1.5rem; margin-bottom:1.5rem; text-align: center;">
+                        <img src="https://img.ltwebstatic.com/images3_pi/2021/03/09/161528368123dd7a35ad8708b0dfc74b3630526891.webp" alt="..." style="height: 2.15rem; width: 3rem;">
+                        <img src="	https://img.ltwebstatic.com/images2_pi/2018/06/06/15282732803587566708.webp" alt="..." style="height: 2.15rem; width: 3rem;">
+                        <img src="https://img.ltwebstatic.com/images2_pi/2018/06/06/15282732983375743706.webp" alt="..." style="height: 2.15rem; width: 3rem;">
+                        <img src="https://img.ltwebstatic.com/images2_pi/2018/06/06/15282719811871317559.webp" alt="..." style="height: 2.15rem; width: 3rem;">
+
+
+                    </div>
+                      
+                </div>
+                                
+            </div>
+
+      </div>
+  </div>
+  <hr class="separador">
+<!---->
+
+</div>
+
+
+
+
+<!--SCRIPTS-->  
+<script src="https://kit.fontawesome.com/c3ad86cf20.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="js/navbar.js"></script>
+
+<script>
+    // Obtén referencias a los elementos HTML
+const quantityDisplay = document.getElementById('cantidad_art');
+const increaseButton = document.getElementById('aumentar');
+const decreaseButton = document.getElementById('bajar');
+
+// Manejador de eventos para aumentar la cantidad
+increaseButton.addEventListener('click', () => {
+  // Obtén la cantidad actual
+  let currentQuantity = parseInt(quantityDisplay.innerText);
+  
+  // Aumenta la cantidad en 1
+  currentQuantity++;
+  
+  // Actualiza la cantidad en el elemento HTML
+  quantityDisplay.innerText = currentQuantity;
+});
+
+// Manejador de eventos para disminuir la cantidad
+decreaseButton.addEventListener('click', () => {
+  // Obtén la cantidad actual
+  let currentQuantity = parseInt(quantityDisplay.innerText);
+  
+  // Asegúrate de que la cantidad no sea menor que 1
+  if (currentQuantity > 1) {
+    // Disminuye la cantidad en 1
+    currentQuantity--;
+    
+    // Actualiza la cantidad en el elemento HTML
+    quantityDisplay.innerText = currentQuantity;
+  }
+});
+</script>
+
+</body>
+</html>
